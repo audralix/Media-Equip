@@ -1,0 +1,60 @@
+.tab {
+    --background: var(--ion-color-school);
+    --color: #fff;
+    --border-radius: 5px;
+    font-weight: 600;
+  }
+  
+  ion-card-header {
+    padding: 8px;
+    
+  }
+
+  ion-datetime{
+    background-color: white;
+  }
+
+ /*  ion-title {
+    text-align: center
+  }  */
+
+  .center{
+    display: grid;
+   align-items: center;
+  
+  }
+
+  img{
+    width: 100px;
+  }
+
+.flexRow {
+  
+  display: grid !important;
+  align-items: center !important;
+  align-self: center !important;
+  text-align: center !important;
+  // flex-direction: column;
+    // max-width: 150px;
+    // justify-content: center !important;
+  } 
+
+.text {
+  margin: 10px;
+  padding: 10px;
+  border: #009adb 2px solid;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+margin{
+  margin: 5px;
+}
+
+
+
+  
+
+
+
+

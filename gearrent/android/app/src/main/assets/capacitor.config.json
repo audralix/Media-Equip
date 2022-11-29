@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "gearrent",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

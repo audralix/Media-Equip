@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="school">
+    <ion-title >{{subcategoryName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- https://stackoverflow.com/questions/57798397/group-list-by-data-in-ionic-3 -->
+  <ion-grid>
+    <ion-row  >
+      <ion-col class="container"   >
+      <div *ngFor="let kit of items, let i = index" size="6">
+        <ion-card>
+          <ion-card-heaader (click)="productDetail(kit)" >
+            <ion-card-title style="font-size: 14px;">
+              <span *ngFor="let value of kit,let j = index">
+                {{ value.name }} 
+              </span>           
+            </ion-card-title>
+          </ion-card-heaader>
+          <ion-card-content class="item" (click)="productDetail(kit)">
+             <span *ngFor="let value of kit,let j = index">
+               <img src="{{ value.photos }}" >
+             </span>
+           </ion-card-content>
+           <ion-footer class="icon">
+               <ion-row>
+               <ion-col center text-center>
+               </ion-col>
+               <ion-col center text-center>
+              </ion-col>
+              <ion-col center text-center>
+              </ion-col>
+            
+          <ion-col center text-center>
+            <button fill="clear" (click)="addKitToCart(kit)" >
+              <ion-icon class="icon"  [name]="kit.icon"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+       </ion-footer> 
+     
+        
+       </ion-card>
+      </div>
+      </ion-col>
+      
+    </ion-row>
+
+
+  
+  </ion-grid>
+
+
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+    <ion-tab-bar slot="bottom" color="school">
+       <ion-tab-button [routerDirection]="'root'" routerLink="/home">
+       <ion-icon name="home-outline"></ion-icon>
+       <ion-label>
+        Home
+      </ion-label>
+       </ion-tab-button>
+       <ion-tab-button [routerDirection]="'root'" routerLink="/cart">
+        <ion-icon name="bag-outline"></ion-icon>       
+
+        <ion-label>
+        Bag
+      </ion-label>
+       </ion-tab-button>
+    </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer> 

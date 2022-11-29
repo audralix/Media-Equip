@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="school">
+    <ion-title >{{categoryName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+  <ion-row  >
+    <ion-col *ngFor= 'let item of items; let i = index' size="6" >
+            <!-- *ngFor angular comment for the loops -->
+        <ion-card class="card" color=""  >
+          <ion-card-heaader (click)="productDetail(item)" button >
+              <ion-card-title style="font-size: 14px;">{{item.name}}</ion-card-title>
+          </ion-card-heaader>
+  
+          <ion-card-content class="img"  (click)="productDetail(item)" class="cardImg">
+              <img src='{{ item.photos }}'>
+          </ion-card-content>
+
+       <ion-footer class="icon">
+        <ion-row>
+          <ion-col center text-center>
+           
+          </ion-col>
+          <ion-col center text-center>
+           
+          </ion-col>
+          <ion-col center text-center>
+            <button fill="clear" (click)="addToCart(item)">
+              <ion-icon class="icon"  [name]="item.icon"> </ion-icon>           
+            </button>
+          </ion-col>
+        </ion-row>
+       </ion-footer> 
+        </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+ 
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+    <ion-tab-bar slot="bottom" color="school">
+       <ion-tab-button [routerDirection]="'root'" routerLink="/home">
+       <ion-icon name="home-outline"></ion-icon>
+       <ion-label>
+        home
+      </ion-label>
+       </ion-tab-button>
+     <!--   <ion-tab-button [routerDirection]="'root'" routerLink="/products">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>
+        products
+      </ion-label>
+       </ion-tab-button> -->
+       <ion-tab-button [routerDirection]="'root'" routerLink="/cart">
+        <ion-icon name="bag-outline"></ion-icon>       
+
+        <ion-label>
+        Bag
+      </ion-label>
+       </ion-tab-button>
+    </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer> 

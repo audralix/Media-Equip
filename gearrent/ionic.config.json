@@ -1,0 +1,7 @@
+{
+  "name": "gearrent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

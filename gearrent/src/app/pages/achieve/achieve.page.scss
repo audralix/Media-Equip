@@ -1,0 +1,83 @@
+*{
+    display: block;
+}
+
+/* img {
+    width: 50px;
+    align-items: center;
+}
+
+
+
+ion-item{
+    padding-inline-start:0;
+    padding-inline-end: 0;
+}
+
+.item-content {
+    background-color: aqua;
+    display: grid;
+}
+
+ion-item{
+    display: grid;
+} */
+
+/* ion-row{
+    background-color: #f1f1f1;
+    
+} */
+
+img {
+    width: 100px;
+}
+
+
+
+/* .item-content {
+    display: grid;
+} */
+.box {
+    background-color: #f1f1f1 ;
+    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: gray solid 1px;
+    height: 125px;
+    align-items: center;
+    padding: 1rem;
+    
+ 
+}
+
+.itemInfo{
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+    padding: 10px;
+}
+
+.itemdates{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.days {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.itemName {
+    height: 25px;
+
+}
+
+/* .itemInfo{
+    text-align: center;
+} */
+

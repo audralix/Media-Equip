@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" (click)="dismiss(false)"></ion-back-button>
+    </ion-buttons>
+    <ion-title>itemregister</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input type="text" [(ngModel)]="newItem.name" placeholder="Name"></ion-input>
+  <ion-input type="text" [(ngModel)]="newItem.serialnumber" placeholder="Serial Number"></ion-input>
+  <!-- IONIC DROPDOWN  is not working -->
+  <ion-list>
+    <ion-item>
+      <ion-select interface="popover" placeholder="Subcategory" [value]="selectedSubcategory">
+        <ion-select-option *ngFor='let subcat of subcategories; let i = index' value="subcat" 
+        (onclick)="setSelectedSubcategoty(subcat)">{{subcat.name}}
+      </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> 
+  <ion-input type="text" [(ngModel)]="newItem.subcategory" placeholder="Subcategory" ></ion-input>
+
+  <!-- IONIC DROPDOWN  is not working -->
+ <!--  <ion-list>
+    <ion-item>
+      <ion-select [compareWith]="compareWith" placeholder="Select food"  interface="popover" placeholder="categories">
+        <ion-select-option *ngFor='let cat of categories' value="cat.id">{{cat.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> 
+
+  <!-- Checkboxes in a List --> 
+<!-- <ion-list>
+  <ion-item *ngFor='let cat of categories'>
+    <ion-label value="cat.id">{{cat.name}}</ion-label>
+    <ion-checkbox slot="end" ></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-item *ngFor='let subcat of subcategories'>
+    <ion-label value="subcat.id">{{subcat.name}}</ion-label>
+    <ion-checkbox slot="end" ></ion-checkbox>
+  </ion-item>
+</ion-list> -->
+
+<!-- <ion-button (click)="_alert()" aria-expanded="block" fill="clear" shape="round">
+  Present Alert
+</ion-button> -->
+
+<!-- <ion-button id="open-modal" aria-expanded="block" fill="clear" shape="round">Add in Category</ion-button>
+ -->
+<!-- <ion-modal #modal trigger="open-modal">
+  <ng-template>
+    <ion-content>
+      <ion-toolbar>
+        <ion-title>Categories</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-list>
+        <ion-item *ngFor='let cat of categories'>
+          <ion-label value="cat.id">{{cat.name}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="cat.isChecked"  (click)="_getSelectedItem(cat)" ></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
+
+<!-- <ion-button id="sub-modal" aria-expanded="block" fill="clear" shape="round">Add in Subcategory</ion-button>
+ --><!--  <ion-item lines="none">
+    <ion-label>Current value: {{ currentFood | json }}</ion-label>
+  </ion-item> -->
+
+<!-- <ion-label>Current value: {{ subcat }}</ion-label> -->
+<!-- <ion-modal #modal trigger="sub-modal">
+  <ng-template>
+    <ion-content>
+      <ion-toolbar>
+        <ion-title>Subcategories</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="light" (click)="modal.dismiss()" >Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-list>
+        <ion-item *ngFor='let subcat of subcategories'>
+          <ion-label value="subcat.id">{{subcat.name}}</ion-label>
+          <ion-checkbox slot="end"  [(ngModel)]="subcat.isChecked"  (click)="_getSelectedItem(subcat)" ></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
+
+
+
+
+
+
+  <ion-input type="text" [(ngModel)]="newItem.description" placeholder="description"></ion-input>
+  <ion-input type="text" [(ngModel)]="newItem.status" placeholder="Status"></ion-input>
+  <ion-input type="text" [(ngModel)]="newItem.borrower_id" placeholder="Borrower_id"></ion-input>
+  <ion-input type="text" [(ngModel)]="newItem.photos" placeholder="Photo"></ion-input>
+
+
+  <ion-button (click)="addItem()" expand='block'>Submit</ion-button>
+
+</ion-content>
+
+
+
+
+
+
+

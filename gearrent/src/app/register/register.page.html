@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login" (click)="dismiss(false)"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"  class="ion-padding">
+  <div class="ion-padding container">
+    <h1>Signup</h1>
+
+    <div class="form-container">
+      <ion-item>
+        <ion-label position="floating">Student ID</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.id" placeholder="-"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.name" placeholder="-"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.surname" placeholder="-"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.email" placeholder="-"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.password" placeholder="-"></ion-input>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Course</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.course" placeholder="-"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Year of Education</ion-label>
+        <ion-input type="text" [(ngModel)]="newStudent.year" placeholder="-"></ion-input>
+      </ion-item>
+
+    
+      <ion-button (click)="addStudent()" expand='block' class="main-button" >Sign Up</ion-button>
+<!--       <div class="sign-up">
+        Already have an account? <ion-button (click)="signIn()" color="dark" fill="clear">Sign in</ion-button>
+      </div> -->
+    </div>
+  </div>
+  <div class="sign-up">
+    Already have an account? <ion-button  color="dark" fill="clear" routerLink="/login" routerDirection="forward">Sign in</ion-button>
+  </div>
+</ion-content>

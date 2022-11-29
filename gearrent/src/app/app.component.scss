@@ -1,0 +1,13 @@
+.content {
+    background-color: aqua;
+}
+
+.color{
+
+    --background: var(--ion-color-school);
+    --ion-background-color:var(--ion-color-school);
+}
+
+*{
+    --ion-background-color:green;
+}

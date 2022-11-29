@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="school">
+    <ion-title ><h3>Media Inventory</h3></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" class="ion-padding">
+  <div class="container1" class="ion-padding ion-text-center">
+    <div class="page-header">
+      
+    </div>
+    <img src="../../assets/img/Technological-University-Dublin-Logo.jpg" />
+    
+  </div>
+  <div class="ion-padding container2">
+    <h1>Student login</h1>
+    <div class="form-container">
+      <form (ngSubmit)="login()" >
+        <!-- login() is the function -->
+        <!-- information getting to submit needs to be inside the form -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input name="email" [(ngModel)]="loginData.email" placeholder="-"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="loginData.password" placeholder="-"></ion-input>
+          <ion-icon name="eye" slot="end"></ion-icon>
+
+        </ion-item>
+        <!-- you should be sure that the data is collected somehow -->
+        <!-- you should create the from -->
+        <!-- it should be inside of the form -->
+        <!-- (click)="IfLogin()" (click)="signIn('user') -->
+       <!-- <ion-button type="submit" class="main-button" expand="block" routerLink="/login" (click)="signIn('user')" routerDirection="forward" >Log In</ion-button> -->
+       <ion-button type="submit" class="main-button" expand="block"  >Log In</ion-button>
+
+      </form>
+    </div>
+    <div class="sign-up">
+      <h1>Don’t have an account? 
+        <ion-button class="register" type="submit"  fill="clear"  expand="block" routerLink="/register" (click)="addStudent()">Register</ion-button>
+        <ion-button class="admin" size="small" expand="block" fill="outline" (click)="ShowMe()" size="large"><ion-icon name="document-text-outline"></ion-icon>&nbsp;Administrator</ion-button> 
+      </h1>   
+    </div>
+    <div *ngIf="showMe" class="form-container">
+      <h1>Admin login</h1>
+        <form (ngSubmit)="login()" >
+          <!-- login() is the function -->
+          <!-- information getting to submit needs to be inside the form -->
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input name="email" [(ngModel)]="adminData.email" placeholder="-"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="adminData.password" placeholder="-"></ion-input>
+            <ion-icon name="eye" slot="end"></ion-icon>
+  
+          </ion-item>
+          <!-- you should be sure that the data is collected somehow -->
+          <!-- you should create the from -->
+          <!-- it should be inside of the form -->
+          <!-- (click)="IfLogin()" (click)="signIn('user') -->
+         <!-- <ion-button type="submit" class="main-button" expand="block" routerLink="/login" (click)="signIn('user')" routerDirection="forward" >Log In</ion-button> -->
+         <ion-button  type="submit" class="main-button" expand="block" routerLink="/login" (click)="signIn('admin')" routerDirection="forward" >Admin Log In</ion-button> 
+  
+        </form>
+      
+    </div>
+  </div>
+
+
+
+
+ <!-- ADMIN LOGIN -->
+  <!-- <ion-card *appHasRole="['read-content']" [@fadeInOut] color="primary">
+    <ion-card-header>My Read Content</ion-card-header>
+    <ion-card-content>
+      Things every logged in user can see
+    </ion-card-content>
+  </ion-card>
+ 
+  <ion-button expand="full" (click)="loginAdmin()" *ngIf="!authenticated">Login as Admin</ion-button>
+  <ion-button expand="full" (click)="loginUser()" *ngIf="!authenticated">Login as User</ion-button>
+  <ion-button expand="full" (click)="logout()" *ngIf="authenticated">Logout</ion-button>
+ 
+  <ion-card *appHasRole="['read-content']" [@fadeInOut] color="primary">
+    <ion-card-header>My Read Content</ion-card-header>
+    <ion-card-content>
+      Things every logged in user can see
+    </ion-card-content>
+  </ion-card>
+ 
+  <ion-card *appHasRole="['purchase-items']" [@fadeInOut] color="secondary">
+    <ion-card-header>My User Purchase Content</ion-card-header>
+    <ion-card-content>
+      Things only the users can see
+    </ion-card-content>
+  </ion-card>
+ 
+  <ion-card *appHasRole="['write-content', 'admin']" [@fadeInOut] color="tertiary">
+    <ion-card-header>My Admin Content</ion-card-header>
+    <ion-card-content>
+      Things only the admin can see
+    </ion-card-content>
+  </ion-card> -->
+
+  
+</ion-content>

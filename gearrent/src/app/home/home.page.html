@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="school">
+    <ion-title> Media Equipment </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"> </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="invisible">
+      <ion-button></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-segment (ionChange)="segmentChanged($event)" color="school">
+    <ion-row>
+      <ion-col size="6">
+        <ion-segment-button value="friends" class="tab">
+          <ion-label>Equipment</ion-label>
+        </ion-segment-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-segment-button value="enemies" class="tab">
+          <ion-label>Kit</ion-label>
+        </ion-segment-button>
+      </ion-col>
+    </ion-row>
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let categories of newcategories" size="6">
+        <!-- TAB ;  *ngIf="selectedSegment == 'friends' " -->
+        <div *ngIf="selectedSegment == 'friends' ">
+          <!-- *ngFor angular comment for the loops -->
+          <ion-card
+            button
+            (click)="openpage(categories.id,categories.name,items)"
+            items
+          >
+            <ion-card-header>
+              <img src="{{ categories.img_name }}" />
+              <ion-card-title
+                ><span class="large" [innerHtml]="categories.name"></span
+              ></ion-card-title>
+            </ion-card-header>
+            <!--  <ion-card-content>
+              <ion-button expand="block" (click)="addToCart(product)"><ion-icon name="cart"></ion-icon>&nbsp;Add to cart</ion-button>
+            </ion-card-content> -->
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- TAB;  Subcategories SEction -->
+    <ion-row>
+      <!-- *ngIf="selectedSegment == 'enemies' " -->
+      <ion-col *ngFor="let subcategories of subnewcategories" size="6">
+        <div *ngIf="selectedSegment == 'enemies' ">
+          <!-- *ngFor angular comment for the loops -->
+          <ion-card
+            button
+            (click)="opensubitems(subcategories.id,subcategories.name,items)"
+          >
+            <ion-card-header>
+              <img src="{{ subcategories.img_name }}" />
+
+              <ion-card-title
+                ><span class="large" [innerHtml]="subcategories.name"></span
+              ></ion-card-title>
+            </ion-card-header>
+            <!-- <ion-card-content>Macbook</ion-card-content> -->
+            <!-- <ion-card-content>
+                        <ion-button expand="block" (click)="addToCart(product)"><ion-icon name="cart"></ion-icon>&nbsp;Add to cart</ion-button>
+                      </ion-card-content> -->
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--  <ion-fab vertical="top" horizontal="end" slot="fixed" appDisableRole disableForRole="USER" >
+    <ion-fab-button color="secondary" id="open-modal" trigger="openModal" (click)="presentModal()">
+      <ion-icon name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" color="school">
+        <ion-tab-button [routerDirection]="'root'" routerLink="/home">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label> home </ion-label>
+        </ion-tab-button>
+        <ion-tab-button [routerDirection]="'root'" routerLink="/cart">
+          <ion-icon name="bag-outline"></ion-icon>
+          <ion-label> Bag </ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

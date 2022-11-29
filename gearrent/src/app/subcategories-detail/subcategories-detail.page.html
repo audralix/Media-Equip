@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar color="school">
+    <ion-buttons slot="start">
+      <ion-back-button  text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Kit Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <div  class="img">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of items, let i = index">
+          <span>
+            <img src='{{ item.photos }}'>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </div>
+
+   <div  class="ion-padding-vertical">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of items, let i = index">
+          <span><h4 class="item-name">{{item.name}}</h4> </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </div>
+  
+ 
+
+  <div class="seperator">
+    <hr>
+  </div>
+  
+  <h5>Description</h5>
+  <div *ngFor="let item of items, let i = index" class="description">
+    
+
+    <p>
+      {{item.description}}
+    </p>
+
+  </div>
+
+  
+
+
+
+
+
+ 
+
+<!--   <div>
+    <ion-row>
+      <ion-col size="4">
+
+      </ion-col>
+     <ion-col size="6">
+        <ion-button class="main-button" expand="block" (click)="addKitToCart(items)" >
+           <ion-icon class=""color="main-button" size="large" [name]="items.icon"></ion-icon> 
+          &nbsp;Add to cart</ion-button>
+      </ion-col> 
+      <ion-col size="8">
+        <ion-button class="main-button" (click)="addKitToCart(items)" >
+           <ion-icon  [name]="items.icon"></ion-icon> 
+          &nbsp;Add to the Bag</ion-button>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+  <div style="text-align: center !important;">
+    <ion-button  class="centerButton" (click)="addKitToCart(items)" >
+      <ion-icon  [name]="items.icon"></ion-icon> 
+     &nbsp;Add to Bag</ion-button>
+
+  </div>
+
+  
+     
+   
+     
+
+
+
+  
+      
+  
+    
+  
+  
+  
+      
+     
+  
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-tabs>
+      <ion-tab-bar slot="bottom" color="school">
+         <ion-tab-button [routerDirection]="'root'" routerLink="/home">
+         <ion-icon name="home-outline"></ion-icon>
+         <ion-label>
+          home
+        </ion-label>
+      </ion-tab-button>
+       
+         <ion-tab-button [routerDirection]="'root'" routerLink="/cart">
+          <ion-icon name="bag-outline"></ion-icon>       
+  
+          <ion-label>
+          Bag
+        </ion-label>
+         </ion-tab-button>
+      </ion-tab-bar>
+      </ion-tabs>
+    </ion-toolbar>
+  </ion-footer> 

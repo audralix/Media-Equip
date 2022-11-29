@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+    <ion-tab-bar slot="bottom" color="primary">
+       <ion-tab-button [routerDirection]="'root'" routerLink="/home">
+       <ion-icon name="home-outline"></ion-icon>
+       <ion-label>
+        home
+      </ion-label>
+       </ion-tab-button>
+       <ion-tab-button [routerDirection]="'root'" routerLink="/products">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>
+        products
+      </ion-label>
+       </ion-tab-button>
+       <ion-tab-button [routerDirection]="'root'" routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+
+        <ion-label>
+        cart
+      </ion-label>
+       </ion-tab-button>
+    </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer> 

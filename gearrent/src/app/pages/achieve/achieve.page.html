@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="school">
+    <ion-title>Archive</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"> </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--   <ion-grid>
+    <ion-row
+      *ngFor="let order of orders, let i = index"
+      style="background: #f1f1f1"
+    >
+      <ion-col size="4">
+        <div>
+          <img src="{{ order.photos }}" />
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <ion-label>{{order.name}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{order.startDate}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>{{order.endDate}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!--   <ion-grid>
+    <ion-row *ngFor="let order of orders, let i = index">
+      <ion-col size="4">
+        <img src="{{order.photos}}" alt="" />
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-label> {{order.name}}</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-label>Start Date: {{order.startDate}}</ion-label>
+          <ion-label>Return Date: {{order.endDate}}</ion-label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!--   <ion-list lines="full">
+    <ion-item *ngFor="let order of orders, let i = index">
+      <div class="item-content">
+        <ion-row>
+          <ion-col>
+            <img src="{{order.photos}}" alt="" />
+          </ion-col>
+          <ion-col>
+            <ion-row>
+              <ion-label> {{order.name}}</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-label>Start Date: {{order.startDate}}</ion-label>
+              <ion-label>Return Date: {{order.endDate}}</ion-label>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-item>
+  </ion-list> -->
+
+  <!--  <ion-list lines="full">
+    <ion-item *ngFor="let order of orders, let i = index">
+      <div class="item-content">
+        <img src="{{order.photos}}" alt="" />
+
+        <ion-label> {{order.name}}</ion-label>
+
+        <ion-label>Start Date: {{order.startDate}}</ion-label>
+        <ion-label>Return Date: {{order.endDate}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-list> -->
+
+  <div class="box">
+    <div *ngFor="let order of orders, let i = index" class="container">
+      <div class="img">
+        <img src="{{order.photos}}" alt="" />
+      </div>
+      <div class="itemInfo">
+        <div class="itemName">
+          <ion-label> {{order.name}}</ion-label>
+        </div>
+        <div class="itemdates">
+          <div class="days">
+            <div class="starDate">
+              <ion-label>Start Date:</ion-label>
+            </div>
+            <div class="startInput">
+              <ion-label>{{order.startDate}}</ion-label>
+            </div>
+          </div>
+          <div class="days">
+            <div class="endDate">
+              <ion-label>Return Date: </ion-label>
+            </div>
+            <div class="startInput">
+              <ion-label>{{order.endDate}}</ion-label>
+            </div>
+          </div>
+
+          <!--           <ion-label>Start Date: {{order.startDate}}</ion-label>
+          <ion-label>Return Date: {{order.endDate}}</ion-label>
+ -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
